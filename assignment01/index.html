@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script type="module" src="index.js"></script>
+    <title>Layout</title>
+</head>
+
+<body class="overflow-x-hidden">
+    <div id="root" class="p-4 md:p-10 bg-gray-50 min-h-screen ">
+        <div id="navBar" class="flex justify-between">
+            <div class="flex gap-4 p-2">
+                <div class="bg-red-50">
+                    <img src="/img/grid-3x3-gap.svg" class="rounded p-2 bg-green-100 m-2" />
+                </div>
+                <p class="font-bold text-2xl">Start</p>
+            </div>
+            <div>
+                <div class="flex gap-6 justify-end ">
+                    <img src="/img/search (1).svg" class="rounded p-2 hover:bg-red-50 px-4" />
+                    <img src="/img/chat-square-text.svg" class="rounded p-2 hover:bg-red-50 px-4" />
+                    <img src="/img/person.svg" class="rounded p-2 hover:bg-red-50 px-4" />
+                </div>
+            </div>
+        </div>
+        <div id="main-content">
+            <div class="flex flex-col md:grid md:grid-cols-4 mt-6 gap-4 ">
+                <div
+                    class="md:grid place-items-end bg-white rounded-2xl pt-12 px-4 justify-center justify-items-center drop-shadow-xl/25">
+                    <div class="font-bold text-center text-2xl">Kickstart<br />Mobile<br />Application</div>
+                    <button class="bg-[#20d489] text-white py-1 px-4 rounded-2xl mt-6">Create App</button>
+                    <img src="/img/green.jpeg" />
+                </div>
+                <div class="md:col-span-3 bg-white rounded-2xl pt-6 px-6 drop-shadow-xl/25 overflow-x-hidden">
+                    <div class="flex place-content-between ">
+                        <div class="align-right">
+                            <div class="font-medium text-xl">Campaign</div>
+                            <div class="font-medium text-lg text-gray-400">890,344 Sales</div>
+                        </div>
+                        <div class="flex gap-6 font-medium text-lg text-gray-400">
+                            <div
+                                class="campaign-tabs cursor-pointer px-4 bg-gray-200 my-auto rounded-md hover:bg-gray-200">
+                                Day</div>
+                            <div class="campaign-tabs cursor-pointer px-4 my-auto rounded-md hover:bg-gray-200">Week
+                            </div>
+                            <div class="campaign-tabs cursor-pointer px-4 my-auto rounded-md hover:bg-gray-200">Month
+                            </div>
+                        </div>
+                    </div>
+                    <div id="campaign-content">
+
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col md:grid md:grid-cols-4 mt-6 gap-4 ">
+                <div class="md:grid  bg-white rounded-2xl p-4 drop-shadow-xl/25">
+                    <div class="flex justify-between items-center">
+                        <div class="font-medium text-lg">
+                            <p>Sales Share</p>
+                            <p class="text-gray-400">890,344 Sales</p>
+                        </div>
+                        <div class="p-1 bg-green-400 rounded-md">
+                            <img src="/img/grid.svg" />
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <div id="sales_shares_chart"></div>
+                    </div>
+                    <div class="flex gap-4 font-semibold text-xs">
+                        <div>
+                            <p>44% TEAM A</p>
+                            <div class="w-full bg-blue-200  h-1 overflow-hidden">
+                                <div class="bg-blue-800 h-full " style="width:44%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <p>26% TEAM B</p>
+                            <div class="w-full bg-${item.color}-200  h-1 overflow-hidden">
+                                <div class="bg-green-800 h-full " style="width:44%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <p>30% TEAM C</p>
+                            <div class="w-full bg-orange-200  h-1 overflow-hidden">
+                                <div class="bg-orange-600 h-full " style="width:44%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-3 bg-white rounded-2xl pt-6 px-6 drop-shadow-xl/25 overflow-x-hidden">
+                    <div class="flex justify-between items-center">
+                        <div class="font-medium text-lg">
+                            <p>Milestones</p>
+                            <p class="text-gray-400">890,344 Sales</p>
+                        </div>
+                        <div class="p-1 bg-green-400 rounded-md">
+                            <img src="/img/grid.svg" />
+                        </div>
+                    </div>
+
+                    <div class="md:flex justify-between font-semibold mx-auto ">
+                        <div class="flex flex-col mx-auto">
+                            <div id="1"
+                                class="milestone_options flex items-center justify-center p-4 gap-4 hover:bg-gray-100 rounded-md bg-gray-100 cursor-pointer">
+                                <div>
+                                    <img src="/img/milestone_icon1.png" class="h-7" />
+                                </div>
+                                <div>
+                                    <p>Man&Flower SaaS</p>
+                                    <p class="text-gray-400">HR Solutions</p>
+                                </div>
+                            </div>
+                            <div id="2"
+                                class="milestone_options flex items-center justify-center p-4 gap-4 hover:bg-gray-100 rounded-md cursor-pointer">
+                                <div>
+                                    <img src="/img/milestone_icon2.png" class="h-7" />
+                                </div>
+                                <div>
+                                    <p>Man&Flower SaaS</p>
+                                    <p class="text-gray-400">HR Solutions</p>
+                                </div>
+                            </div>
+                            <div id="3"
+                                class="milestone_options flex items-center justify-center p-4 gap-4 hover:bg-gray-100 rounded-md cursor-pointer">
+                                <div>
+                                    <img src="/img/milestone_icon3.png" class="h-7" />
+                                </div>
+                                <div>
+                                    <p>Man&Flower SaaS</p>
+                                    <p class="text-gray-400">HR Solutions</p>
+                                </div>
+                            </div>
+                            <div id="4"
+                                class="milestone_options flex items-center justify-center p-4 gap-4 hover:bg-gray-100 rounded-md cursor-pointer">
+                                <div>
+                                    <img src="/img/milestone_icon4.png" class="h-7" />
+                                </div>
+                                <div>
+                                    <p>Man&Flower SaaS</p>
+                                    <p class="text-gray-400">HR Solutions</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex gap-10 justify-center">
+                                <div>
+                                    <p>Sale</p>
+                                    <p class="text-gray-400">$550</p>
+                                </div>
+                                <div>
+                                    <p>Commission</p>
+                                    <p class="text-gray-400">$2,100</p>
+                                </div>
+                                <div>
+                                    <p>Refer</p>
+                                    <p class="text-gray-400">$8,926</p>
+                                </div>
+                            </div>
+                            <div class="flex justify-center ">
+                                <div id="milestone_chart"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col md:grid md:grid-cols-4 mt-6 gap-4 ">
+                <div class="md:grid  bg-white rounded-2xl pt-4 px-4 drop-shadow-xl/25">
+                    <div class="flex justify-between items-center">
+                        <div class="font-medium text-lg">
+                            <p>Timeline</p>
+                            <p class="text-gray-400">Updates</p>
+                        </div>
+                        <div class="p-1 bg-green-400 rounded-md">
+                            <img src="/img/grid.svg" />
+                        </div>
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+                <div class="md:col-span-3 bg-white rounded-2xl pt-6 px-6 drop-shadow-xl/25 overflow-x-hidden">
+                    <div class="flex place-content-between ">
+                        <div class="align-right">
+                            <div class="font-medium text-xl">Acheivment</div>
+                            <div class="font-medium text-lg text-gray-400">890,344 Sales</div>
+                        </div>
+                        <div class="flex gap-6 font-medium text-lg text-gray-400">
+                            <div class=" cursor-pointer px-4 my-auto rounded-md hover:bg-gray-200">
+                                Day</div>
+                            <div class=" cursor-pointer px-4 my-auto rounded-md hover:bg-gray-200">Week
+                            </div>
+                            <div class=" cursor-pointer px-4 my-auto rounded-md hover:bg-gray-200">Month
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="campaign-item font-semibold flex items-between  py-4">
+                            <div class="flex grow">
+                                <div>
+                                    <img src="/img/blue-man.png"
+                                        class=" rounded-md bg-blue-50 p-2 mr-4 w-10" />
+                                </div>
+                                <div>
+                                    <h3 class="hover:text-green-400">Brad Simons</h3>
+                                    <p class="text-gray-400">HTML/CSS/JS,Python</p>
+                                </div>
+                            </div>
+                            <div class="flex md:gap-20 items-center justify-center">
+                                <div class="">
+                                    <div class="tracking-wide">$1,200,000</div>
+                                    <div class="text-gray-400 text-xs">
+                                        Paid
+                                    </div>
+                                </div>
+                                <div class="text-gray-400 text-red-600">46%</div>
+                                <div
+                                    class="flex items-center justify-center py-2 px-1 rounded-md bg-gray-100 cursor-pointer hover:bg-green-400">
+                                    <img src="/img/arrow-right.svg" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="campaign-item font-semibold flex items-between  py-4">
+                            <div class="flex grow">
+                                <div>
+                                    <img src="/img/man.png"
+                                        class=" rounded-md bg-blue-50 p-2 mr-4 w-10" />
+                                </div>
+                                <div>
+                                    <h3 class="hover:text-green-400">Brad Simons</h3>
+                                    <p class="text-gray-400">HTML/CSS/JS,Python</p>
+                                </div>
+                            </div>
+                            <div class="flex md:gap-20 items-center justify-center">
+                                <div class="">
+                                    <div class="tracking-wide">$1,200,000</div>
+                                    <div class="text-gray-400 text-xs">
+                                        Paid
+                                    </div>
+                                </div>
+                                <div class="text-gray-400 text-green-600">46%</div>
+                                <div
+                                    class="flex items-center justify-center py-2 px-1 rounded-md bg-gray-100 cursor-pointer hover:bg-green-400">
+                                    <img src="/img/arrow-right.svg" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="campaign-item font-semibold flex items-between  py-4">
+                            <div class="flex grow">
+                                <div>
+                                    <img src="/img/man.png"
+                                        class=" rounded-md bg-blue-50 p-2 mr-4 w-10" />
+                                </div>
+                                <div>
+                                    <h3 class="hover:text-green-400">Brad Simons</h3>
+                                    <p class="text-gray-400">HTML/CSS/JS,Python</p>
+                                </div>
+                            </div>
+                            <div class="flex md:gap-20 items-center justify-center">
+                                <div class="">
+                                    <div class="tracking-wide">$1,200,000</div>
+                                    <div class="text-gray-400 text-xs">
+                                        Paid
+                                    </div>
+                                </div>
+                                <div class="text-gray-400 text-blue-600">46%</div>
+                                <div
+                                    class="flex items-center justify-center py-2 px-1 rounded-md bg-gray-100 cursor-pointer hover:bg-green-400">
+                                    <img src="/img/arrow-right.svg" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="campaign-item font-semibold flex items-between  py-4">
+                            <div class="flex grow">
+                                <div>
+                                    <img src="/img/man.png"
+                                        class=" rounded-md bg-blue-50 p-2 mr-4 w-10" />
+                                </div>
+                                <div>
+                                    <h3 class="hover:text-green-400">Brad Simons</h3>
+                                    <p class="text-gray-400">HTML/CSS/JS,Python</p>
+                                </div>
+                            </div>
+                            <div class="flex md:gap-20 items-center justify-center">
+                                <div class="">
+                                    <div class="tracking-wide">$1,200,000</div>
+                                    <div class="text-gray-400 text-xs">
+                                        Paid
+                                    </div>
+                                </div>
+                                <div class="text-gray-400 text-yellow-600">46%</div>
+                                <div
+                                    class="flex items-center justify-center py-2 px-1 rounded-md bg-gray-100 cursor-pointer hover:bg-green-400">
+                                    <img src="/img/arrow-right.svg" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+
+        </div>
+    </div>
+</body>
+
+</html>
